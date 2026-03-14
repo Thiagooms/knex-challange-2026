@@ -36,8 +36,7 @@ public class User {
     @Column(nullable = false)
     private UserRole role;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
     private Company company;
 
     @CreationTimestamp

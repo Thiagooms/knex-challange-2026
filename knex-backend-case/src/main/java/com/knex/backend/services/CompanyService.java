@@ -40,7 +40,7 @@ public class CompanyService {
             throw new RuntimeException("Empresa com este nome já existe");
         }
 
-        Company company = new Company(createDto.name());
+        Company company = new Company(createDto.name(), user);
         Company savedCompany = companyRepository.save(company);
 
         user.becomeCollaborator(savedCompany);
